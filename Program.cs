@@ -4,47 +4,24 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Aula16
+namespace Fibonaci
 {
     class Program
     {
         static void Main(string[] args)
         {
-            double nota1, nota2, nota3, nota4 = 0;
-            string frase = "Digite {0}º nota: ";
-
-            Console.WriteLine(frase, 1);
-            nota1 = Convert.ToDouble(Console.ReadLine());
-
-            Console.WriteLine(frase, 2);
-            nota2 = Convert.ToDouble(Console.ReadLine());
-
-            Console.WriteLine(frase, 3);
-            nota3 = Convert.ToDouble(Console.ReadLine());
-
-            Console.WriteLine(frase, 4);
-            nota4 = Convert.ToDouble(Console.ReadLine());
-
-            double total, media = 0;
-
-            total = nota1 + nota2 + nota3 + nota4;
-            media = total / 4;
-
-            Console.WriteLine("A média é: " + media);
-
-            if (media >= 7)
-            {
-                Console.WriteLine("O aluno está aprovado");
+            int i, contador, f1 = 0, f2 = 1, f3 = 0;
+            Console.Write("Digite um numero: ");
+            contador = int.Parse(Console.ReadLine());
+            Console.WriteLine(f1);
+            Console.WriteLine(f2);
+            for (i = 0; i <= contador; i++){
+                f3 = f1 + f2;
+                Console.WriteLine(f3);
+                f1 = f2;
+                f2 = f3;
             }
-            else if (media < 4)
-            {
-                Console.WriteLine("O aluno está reprovado");
-            }
-            else {
-                Console.WriteLine("O aluno está de exame");
-            }
-
-
+            Console.ReadLine();
         }
     }
 }
